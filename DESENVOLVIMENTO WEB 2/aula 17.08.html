@@ -9,33 +9,26 @@
 </head>
 
 <style>
-    
-   
     body {
-        background-image: url(https://lncimg.lance.com.br/cdn-cgi/image/width=640,quality=75,format=webp/uploads/2023/08/sao-paulo-copa-do-brasil-corinthians-1-aspect-ratio-512-320.jpg);
         text-align: center;
         justify-content: center;
         display: grid;
-        align-items: center;
-        margin: auto;
-        border: 3px solid red;
-        padding: 10px;
-        width: 50%;
-        position: static;
+        width: 100%;
+        height: 100%;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        font-style: italic;
+    }
+    button {
+        width: 110px;
+        height: 50px;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        font-style: italic;
     }
 </style>
 
 
 <script>
 
-    function funcaoNovo() {
-        document.getElementById("btnNovo").disabled = false;
-        document.getElementById("btnAlter").disabled = true;
-        document.getElementById("btnExcluir").disabled = true;
-        document.getElementById("btnPesquisar").disabled = true;
-        document.getElementById("btnSalvar").disabled = true;
-        document.getElementById("btnCancelar").disabled = true;
-    }
     function funcaoSalvar() {
         document.getElementById("btnNovo").disabled = false;
         document.getElementById("btnAlter").disabled = true;
@@ -51,7 +44,7 @@
         document.getElementById("btnAlter").disabled = true;
         document.getElementById("btnExcluir").disabled = true;
         document.getElementById("btnPesquisar").disabled = true;
-        document.getElementById("btnSalvar").disabled = true;
+        document.getElementById("btnSalvar").disabled = false;
     }
     function funcaoExcluir() {
         document.getElementById("btnCancelar").disabled = false;
@@ -70,45 +63,82 @@
         document.getElementById("btnSalvar").disabled = true;
     }
     function funcaoCancelar() {
-        document.getElementById("btnCancelar").disabled = true;
+        document.getElementById("btnCancelar").disabled = false;
+        document.getElementById("btnNovo").disabled = false;
+        document.getElementById("btnAlter").disabled = false;
+        document.getElementById("btnExcluir").disabled = false;
+        document.getElementById("btnPesquisar").disabled = false;
+        document.getElementById("btnSalvar").disabled = false;
+    }
+
+    function funcaoNovo() {
         document.getElementById("btnNovo").disabled = false;
         document.getElementById("btnAlter").disabled = true;
         document.getElementById("btnExcluir").disabled = true;
-        document.getElementById("btnPesquisar").disabled = false;
-        document.getElementById("btnSalvar").disabled = true;
+        document.getElementById("btnPesquisar").disabled = true;
+        document.getElementById("btnSalvar").disabled = false;
+        document.getElementById("btnCancelar").disabled = false;
+        document.getElementById("txtNome").disabled = false;
+        document.getElementById("txtRA").disabled = false;
+        document.getElementById("txtCPF").disabled = false;
+        document.getElementById("txtEMAIL").disabled = false;
+        document.getElementById("txtMATRICULA").disabled = false;
+        document.getElementById("txtCURSO").disabled = false;
+        document.getElementById("txtDTING").disabled = false;
+        document.getElementById("txtTURNO").disabled = false;
+        document.getElementById("txtCR").disabled = false;
     }
 
 </script>
 
-<body>
-    <div class="button">
-        <button type="button" id="btnNovo" class="btn btn btn-primary"
-    onclick="funcaoNovo()">Novo
-    </button>
+<body style="background: black;">
 
-    <button type="button" id="btnAlter" class="btn btn btn-primary"
-    onclick="funcaoAlterar()">Alterar
-    </button>
 
-    <button type="button" id="btnExcluir" class="btn btn btn-primary"
-    onclick="funcaoExcluir()">Excluir
-    </button>
+    <span style="color: white; font-size: 20px;">NOME</span> <input type="text" class="form-control" id="txtNome" disabled>
+ <br>
+    <span style="color: white; font-size: 20px;">CPF</span> <input type="text" class="form-control" id="txtCPF" disabled>
+<br>    
+    <span style="color: white; font-size: 20px;">E-mail</span> <input type="text" class="form-control" id="txtEMAIL" disabled>
+<br>    
+    <span style="color: white; font-size: 20px;">Matrícula</span> <input type="text" class="form-control" id="txtMATRICULA" disabled>
+<br>    
+    <span style="color: white; font-size: 20px;">Curso</span> <input type="text" class="form-control" id="txtCURSO" disabled>
+<br>    
+    <span style="color: white; font-size: 20px;">Data de Ingresso</span> <input type="date" class="form-control" id="txtDTING" disabled>
+<br>    
+    <span style="color: white; font-size: 20px;">Turno</span> <input type="text" class="form-control" id="txtTURNO" disabled>
+<br>    
+    <span style="color: white; font-size: 20px;">Coeficiente de Rendimento</span> <input type="number" class="form-control" id="txtCR" disabled>
+<br>    
+    <span style="color: white; font-size: 20px;">RA</span> <input type="text" class="form-control" id="txtRA" disabled>
+<br>
 
-    <button type="button" id="btnPesquisar" class="btn btn btn-primary"
-    onclick="funcaoPesquisa()">Pesquisar
-    </button>
+<div class="button">
+    <button style="background-color: green;"  type="button" id="btnNovo" class="btn btn btn-primary"
+onclick="funcaoNovo()">Novo
+</button>
 
-    <button type="button" id="btnSalvar" class="btn btn btn-primary"
-    onclick="funcaoSalvar()">Salvar
-    </button>
+<button  type="button" id="btnAlter" class="btn btn btn-primary"
+onclick="funcaoAlterar()">Alterar
+</button>
 
-    <button type="button" id="btnCancelar" class="btn btn btn-primary"
-    onclick="funcaoCancelar()">Cancelar
-    </button>
+<button style="background-color: darkred;" type="button" id="btnExcluir" class="btn btn btn-primary"
+onclick="funcaoExcluir()">Excluir
+</button>
 
-    </div>
-    
+<button  type="button" id="btnPesquisar" class="btn btn btn-primary"
+onclick="funcaoPesquisa()">Pesquisar
+</button>
 
+<button style="background-color: darkgreen;" type="button" id="btnSalvar" class="btn btn btn-primary"
+onclick="funcaoSalvar()">Salvar
+</button>
+
+<button style="background-color: darkred;" type="button" id="btnCancelar" class="btn btn btn-primary"
+onclick="funcaoCancelar()">Cancelar
+</button>
+
+</div>
 
 </body>
 </html>
